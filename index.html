@@ -31,10 +31,21 @@
 		</p>
 		<p>
 			<label for="count">count</label>
+			<select name="filter_count" id="filter_count">
+				<option value="lt"><</option>
+				<option value="lte">≤</option>
+				<option value="equal" selected="">=</option>
+				<option value="gte">≥</option>
+				<option value="gt">></option>
+			</select>
 			<input name="count" type="number" id="count">
 		</p>
 		<p>
 			<label for="datepicker">date</label>
+			<select name="filter_date" id="filter_date">
+				<option value="before">avant</option>
+				<option value="after">après</option>
+			</select>
 			<input name="created_at" type="text" id="datepicker">
 		</p>
 	</form>
