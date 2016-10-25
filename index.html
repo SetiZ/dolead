@@ -1,7 +1,50 @@
 <!doctype html>
 <html>
 <head>
+  	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<script src="jquery-3.1.1.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script>
+		$(function() {
+			$( "#datepicker" ).datepicker({
+			  dateFormat: "yy-mm-dd"
+			});
+		});
+	</script>
 </head>
 <body>
+	<form id="formul">
+		<p>
+			<label for="user">user</label>
+			<input name="user" type="text" id="user">
+		</p>
+		<p>
+			<label for="event_type">type</label>
+			<select name="type" id="event_type">
+				<option value="SIGNED_UP">signé</option>
+				<option value="CLICKED">clické</option>
+			</select>
+		</p>
+		<p>
+			<label for="count">count</label>
+			<input name="count" type="number" id="count">
+		</p>
+		<p>
+			<label for="datepicker">date</label>
+			<input name="created_at" type="text" id="datepicker">
+		</p>
+	</form>
+
+	<p><tt id="results"></tt></p>
+	<script>
+  function showValues() {
+    var str = $( "form" ).serialize();
+    $( "#results" ).text( str );
+  }
+  $( "input[type='checkbox'], input[type='radio']" ).on( "click", showValues );
+  $( "select" ).on( "change", showValues );
+  $( "input[type='text'], input[type='number']" ).on( "change", showValues );
+  showValues();
+</script>
 </body>
 </html>
